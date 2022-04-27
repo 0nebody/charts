@@ -65,5 +65,9 @@ Create the name of the service account to use
 Create the user details
 */}}
 {{- define "ssh.userDetails" -}}
-{{- printf "%s:%s:%s:%s" .Values.user.name .Values.user.uid .Values.user.gid .Values.user.shell | quote }}
+{{- $name := .Values.user.name }}
+{{- $uid := .Values.user.uid | toString }}
+{{- $gid := .Values.user.gid | toString }}
+{{- $shell := .Values.user.shell }}
+{{- printf "%s:%s:%s:%s" $name $uid $gid $shell | quote }}
 {{- end }}
