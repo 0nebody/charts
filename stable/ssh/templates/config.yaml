@@ -5,4 +5,6 @@ metadata:
   name: authorized-keys
 data:
   authorized_keys: |
-    ssh-rsa examplekey
+  {{- range .Values.authorizedKeys }}
+    {{ . }}
+  {{- end }}
