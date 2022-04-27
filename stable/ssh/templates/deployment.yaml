@@ -12,8 +12,9 @@ spec:
       {{- include "ssh.selectorLabels" . | nindent 6 }}
   template:
     metadata:
-      {{- with .Values.podAnnotations }}
       annotations:
+        checksum/config: {{ include (print $.Template.BasePath "/config.yaml") . | sha256sum }}
+      {{- with .Values.podAnnotations }}
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
@@ -32,15 +33,14 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
-            # TODO: template
             - name: SSH_USERS
-              value: www:1000:1000:/bin/bash
+              value: {{ .Values.user | default "user:1000:1000:/bin/bash" | quote }}
             - name: SSH_ENABLE_PASSWORD_AUTH
-              value: 'false'
+              value: {{ .Values.enablePassword_auth | default "false" | quote }}
             - name: SSH_ENABLE_ROOT_PASSWORD_AUTH
-              value: 'false'
+              value: {{ .Values.enableRootPasswordAuth | default "false" | quote }}
             - name: MOTD
-              value: 'Web server transfer shell'
+              value: {{ .Values.motd | default "" | quote }}
           ports:
             - name: ssh
               containerPort: 22
