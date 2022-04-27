@@ -34,7 +34,7 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
             - name: SSH_USERS
-              value: {{ .Values.user | default "user:1000:1000:/bin/bash" | quote }}
+              value: {{ include "ssh.userDetails" . }}
             - name: SSH_ENABLE_PASSWORD_AUTH
               value: {{ .Values.enablePassword_auth | default "false" | quote }}
             - name: SSH_ENABLE_ROOT_PASSWORD_AUTH
@@ -49,7 +49,7 @@ spec:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
             - name: authorized-keys
-              mountPath: /etc/authorized_keys/www
+              mountPath: /etc/authorized_keys/{{ .Values.user.name }}
               subPath: authorized_keys
               readOnly: true
             - name: data

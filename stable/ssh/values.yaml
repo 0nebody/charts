@@ -33,4 +33,8 @@ authorizedKeys: []
 enablePassword_auth: false
 enableRootPasswordAuth: false
 motd: 'Web server transfer shell'
-user: user:1000:1000:/bin/bash
+user:
+  name: user
+  uid: 1000
+  gid: 1000
+  shell: /bin/bash

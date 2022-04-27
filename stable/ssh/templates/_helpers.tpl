@@ -60,3 +60,10 @@ Create the name of the service account to use
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}
 {{- end }}
+
+{{/*
+Create the user details
+*/}}
+{{- define "ssh.userDetails" -}}
+{{- printf "%s:%s:%s:%s" .Values.user.name .Values.user.uid .Values.user.gid .Values.user.shell | quote }}
+{{- end }}
