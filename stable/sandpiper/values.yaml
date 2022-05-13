@@ -9,6 +9,9 @@ web:
     type: ClusterIP
     port: 8000
     annotations: {}
+  podAnnotations: {}
+  podSecurityContext: {}
+  securityContext: {}
 api:
   image:
     repository: 112652377709.dkr.ecr.ap-southeast-2.amazonaws.com/sandpiper/api
@@ -18,16 +21,13 @@ api:
     type: ClusterIP
     port: 5000
     annotations: {}
+  podAnnotations: {}
+  podSecurityContext: {}
+  securityContext: {}
 
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
-
-podAnnotations: {}
-
-podSecurityContext: {}
-
-securityContext: {}
 
 ingress:
   enabled: false
