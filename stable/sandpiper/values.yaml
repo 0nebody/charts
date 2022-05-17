@@ -12,6 +12,7 @@ web:
   podAnnotations: {}
   podSecurityContext: {}
   securityContext: {}
+  extraContainers: {}
 api:
   image:
     repository: 112652377709.dkr.ecr.ap-southeast-2.amazonaws.com/sandpiper/api
@@ -24,6 +25,7 @@ api:
   podAnnotations: {}
   podSecurityContext: {}
   securityContext: {}
+  extraContainers: {}
 
 imagePullSecrets: []
 nameOverride: ""
