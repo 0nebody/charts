@@ -29,6 +29,9 @@ spec:
       securityContext:
         {{- toYaml .Values.api.podSecurityContext | nindent 8 }}
       containers:
+        {{- with .Values.api.extraContainers }}
+        {{- . | toYaml | nindent 8 }}
+        {{- end }}
         - name: {{ .Chart.Name }}-api
           securityContext:
             {{- toYaml .Values.api.securityContext | nindent 12 }}
@@ -51,9 +54,6 @@ spec:
           volumeMounts:
             - mountPath: /sandpiper/db
               name: sandpiper-database
-        {{- with .Values.api.extraContainers }}
-        {{- . | toYaml | nindent 8 }}
-        {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
@@ -67,6 +67,9 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       volumes:
+        {{- with .Values.api.extraVolumes }}
+        {{- . | toYaml | nindent 8 }}
+        {{- end }}
         - name: sandpiper-database
           persistentVolumeClaim:
             claimName: {{ template "sandpiper.fullname" . }}-database

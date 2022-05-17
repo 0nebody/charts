@@ -29,6 +29,9 @@ spec:
       securityContext:
         {{- toYaml .Values.web.podSecurityContext | nindent 8 }}
       containers:
+        {{- with .Values.web.extraContainers }}
+        {{- . | toYaml | nindent 8 }}
+        {{- end }}
         - name: {{ .Chart.Name }}-web
           securityContext:
             {{- toYaml .Values.web.securityContext | nindent 12 }}
@@ -51,9 +54,6 @@ spec:
               port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-        {{- with .Values.web.extraContainers }}
-        {{- . | toYaml | nindent 8 }}
-        {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
@@ -65,4 +65,8 @@ spec:
       {{- with .Values.tolerations }}
       tolerations:
         {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.web.extraVolumes }}
+      volumes:
+        {{- . | toYaml | nindent 8 }}
       {{- end }}
