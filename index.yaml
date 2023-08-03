@@ -11,4 +11,15 @@ entries:
     urls:
     - https://github.com/0nebody/charts/releases/download/benth-0.1.0/benth-0.1.0.tgz
     version: 0.1.0
-generated: "2023-08-03T04:50:47.153921959Z"
+  benth2:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-08-03T05:35:39.758951077Z"
+    description: A Helm chart for Kubernetes
+    digest: c09e088c932c78088ce04f20f6157db5fd4cf33183f0a54bbf777dccec0476c3
+    name: benth2
+    type: application
+    urls:
+    - https://github.com/0nebody/charts/releases/download/benth2-0.1.0/benth2-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-08-03T05:35:39.758959577Z"
