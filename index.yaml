@@ -3,6 +3,16 @@ entries:
   benth:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2023-08-03T05:39:06.752481138Z"
+    description: benth application
+    digest: 42ab2b3d33c89da1199bad5d8cbdfd49862553888d43e953205a3627e3d2fd34
+    name: benth
+    type: application
+    urls:
+    - https://github.com/0nebody/charts/releases/download/benth-0.1.1/benth-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2023-08-03T04:50:47.153915859Z"
     description: A Helm chart for Kubernetes
     digest: f9e8f8d8d92121b7f71e69671883dc688d0300fd4f25963e9d9f3bbe59d3d6eb
@@ -14,6 +24,16 @@ entries:
   benth2:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2023-08-03T05:39:06.969441991Z"
+    description: benth2 application
+    digest: 73384f81382cccb03ef54f3c9928e4af3c88fb8ce74e4b0510c325244e2e9f48
+    name: benth2
+    type: application
+    urls:
+    - https://github.com/0nebody/charts/releases/download/benth2-0.1.1/benth2-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2023-08-03T05:35:39.758951077Z"
     description: A Helm chart for Kubernetes
     digest: c09e088c932c78088ce04f20f6157db5fd4cf33183f0a54bbf777dccec0476c3
@@ -22,4 +42,4 @@ entries:
     urls:
     - https://github.com/0nebody/charts/releases/download/benth2-0.1.0/benth2-0.1.0.tgz
     version: 0.1.0
-generated: "2023-08-03T05:35:39.758959577Z"
+generated: "2023-08-03T05:39:06.969451792Z"
