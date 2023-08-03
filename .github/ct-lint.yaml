@@ -2,7 +2,6 @@
 ---
 chart-dirs:
   - stable
-debug: true
 remote: origin
 target-branch: main
 validate-chart-schema: true

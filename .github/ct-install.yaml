@@ -2,7 +2,7 @@
 ---
 chart-dirs:
   - stable
-debug: true
 excluded-charts:
   - common
 remote: origin
+target-branch: main
